@@ -1,0 +1,27 @@
+{% extends 'layout.html' %} {% block content %}
+<main id="main1">
+    <p>
+        MOVIES R US, proudly providing movies to the people of earth for over 30 years!
+        Not a member yet?
+        <br />
+        Want movies on demand for the low price of $500 per month?
+        Just create an account and start streaming today!
+    </p>
+    <br>
+
+    <h3>{{message}}</h3>
+
+    <mov id="home_mov">
+    {%  for movie in selected_movies %}
+        <a class="btn-nav-mov_disp" href="{{"/browse/movie/" + movie.hyperlink}}">{{ movie }}</a>
+    {% endfor %}
+
+    </mov>
+
+</main>
+
+
+
+{% endblock %}
+
+

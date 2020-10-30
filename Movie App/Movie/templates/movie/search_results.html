@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block content %}
+<main id="main">
+    <br>
+    <h2 id="article-header">
+        {{ message }}
+    </h2>
+
+    <br>
+    {% for mov in results %}
+      <a class="btn-nav-mov_disp" href="{{"/browse/" + mov.hyperlink }}">{{ mov }}</a>
+    {% endfor %}
+
+
+
+</main>
+{% endblock %}

@@ -1,0 +1,47 @@
+
+{% extends 'layout.html' %}{% block content %}
+
+
+<main id="main1">
+    <h1 id="movie_name_display">
+        {{ movie.get_name() }}
+    </h1>
+    <a href="{{ url_for("mov_bp.add_to_list", movie=movie.hyperlink) }}">
+            <img src="/static/Play_Button.png" style="width: 55vw; min-width: 330px;" alt="{{ movie }}"/>
+    </a>
+
+    <br>
+    <h3> Actors</h3>
+    {% for actor in movie.get_actor() %}
+        <a class="btn-nav-act-dir" href="{{"/browse/actor/" + actor.hyperlink }}">{{ actor }}</a>
+    {% endfor %}
+    <br><br>
+    <h3> Genres</h3>
+    {% for genre in movie.get_genre() %}
+         <a class="btn-nav-act-dir" href="{{"/browse/genre/" + genre.hyperlink }}">{{ genre }}</a>
+    {% endfor %}
+    <br><br>
+    <h3> Director</h3>
+    <a class="btn-nav-act-dir" href="{{"/browse/director/" + movie.get_director().hyperlink }}">{{ movie.get_director() }}</a>
+    <br><br>
+    <h3>Reviews</h3>
+    <br>
+    {% if rev_tr %}
+              There are no reviews for {{movie.get_name()}}.
+    {% endif %}
+    {% for review in reviews %}
+              <p style="display:inline" id="username_text">{{ review.get_username() }} </p> {{ review.timestamp }}<br>
+                    "{{ review.review_text }}"<br><br>
+    {% endfor %}
+    <br>
+    <br>
+    {% if 'username' in session %}
+        Review this Movie?
+        <form method="POST">
+        <textarea class="textarea" name="text" cols="40" rows="5" placeholder="Review..." type="searches"></textarea>
+        <input type="submit">
+    {% endif %}
+</main>
+
+
+{% endblock %}

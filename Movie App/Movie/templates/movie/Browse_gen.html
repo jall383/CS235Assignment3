@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block content %}
+<main id="main">
+    <br>
+    <h2 id="article-header">
+        {{ message }}
+    </h2>
+
+    <form method="POST">
+    <input class="textarea" name="text" placeholder="Search" type="searches">
+    <input type="submit">
+
+
+
+    <br>
+    {% for mov in list_of_movies %}
+      <a class="btn-nav-mov_disp" href="{{"/browse/movie/" + mov.hyperlink }}">{{ mov }}</a>
+    {% endfor %}
+
+
+
+</main>
+{% endblock %}

@@ -1,0 +1,17 @@
+
+<aside id="sidebar">
+
+    <header>
+        <h1 id="sidebar_title">Watch List</h1>
+    </header>
+<br><br>
+    {% if 'username' in session %}
+        <p id="sidebartext">Continue watching for {{ session['username'] }}</p><br>
+
+        {% for movie in watchlist %}
+            <a class="sidebartext" href="{{"/browse/movie/" + movie.hyperlink }}"> • {{ movie.get_name() }}</a><br><br>
+        {% endfor %}
+    {% else %}
+        <p id="sidebartext">Sign in to view Watchlist</p>
+    {% endif %}
+</aside>

@@ -1,0 +1,3 @@
+go to "venv\Scripts" in command prompt
+
+type "flask run"

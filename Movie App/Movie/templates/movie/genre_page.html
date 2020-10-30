@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block content %}
+<main id="main">
+    <h2 id="article-header">
+        Which Genre are you after?
+    </h2>
+
+    <br>
+    {% for genre in list_of_genres %}
+      <a class="btn-nav-gen " href="{{"/browse/genre/" + genre.hyperlink }}">{{ genre }} </a>
+    {% endfor %}
+
+
+
+</main>
+{% endblock %}

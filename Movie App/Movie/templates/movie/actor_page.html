@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block content %}
+<main id="main">
+    <h2 id="article-header">
+        {{ message }}
+    </h2>
+    <form method="POST">
+    <input class="textarea" name="text" placeholder="Search" type="searches">
+    <input type="submit">
+    <br>
+    {% for actor in list_of_actors %}
+        <a class="btn-nav-act-dir" href="{{"/browse/actor/" + actor.hyperlink }}">{{actor}}</a>
+    {% endfor %}
+
+
+
+</main>
+{% endblock %}

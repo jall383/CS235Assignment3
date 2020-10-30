@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block content %}
+<main id="main">
+    <h2 id="article-header">
+        {{ message }}
+    </h2>
+    <form method="POST">
+    <input class="textarea" name="text" placeholder="Search" type="searches">
+    <input type="submit">
+    <br>
+    {% for director in list_of_directors %}
+      <a class="btn-nav-act-dir" href="{{"/browse/director/" + director.hyperlink }}">{{ director }}</a>
+    {% endfor %}
+
+
+
+</main>
+{% endblock %}

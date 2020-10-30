@@ -1,0 +1,22 @@
+{% extends 'layout.html' %} {% block content %}
+<main id="main">
+    <h1>Welcome {{ username }}</h1>
+    <br><br>
+    <h3>{{ username }}'s Movie Reviews:</h3>
+
+    <br>
+    {% if rev_tr %}
+        {% for review in reviews %}
+            <p id="username_text">{{ review.movie.get_name() }}</p> {{ review.timestamp }}
+               "{{ review.review_text }}"<br><br>
+        {% endfor %}
+    {% else %}
+        {{ username }} has no Movie Reviews
+    {% endif %}
+</main>
+
+
+
+{% endblock %}
+
+

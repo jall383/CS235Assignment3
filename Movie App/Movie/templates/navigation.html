@@ -1,0 +1,38 @@
+
+<nav id="nav">
+
+
+    {% if 'username' in session %}
+        <a href="{{ url_for("authentication_bp.user_page")  }}">
+            <img src="/static/user_icon.png"  style="width: 100px;" alt="user_icon"/>
+            <h2 id="nav-header"> Hello, {{ session['username'] }}</h2>
+        </a>
+        {% else %}
+            <br><br>
+    {%endif %}
+
+        <a class="btn-nav" href="{{ url_for('home_bp.home') }}">Home</a> <br><br>
+        <a class="btn-nav_bottom" href="{{ url_for('authentication_bp.register') }}">Register</a>
+        <a class="btn-nav_bottom" href="{{ url_for('authentication_bp.login') }}">Login</a>
+        <a class="btn-nav" href="{{ url_for('authentication_bp.logout') }}">Logout</a> <br><br>
+        <a class="btn-nav_bottom" href="{{ url_for('mov_bp.browse_by_name') }}">Browse all Movies</a>
+        <a class="btn-nav_bottom" href="{{ url_for('mov_bp.browse_by_genre') }}">Genres</a>
+        <a class="btn-nav_bottom" href="{{ url_for('mov_bp.browse_by_actor') }}">Actors</a>
+        <a class="btn-nav" href="{{ url_for('mov_bp.browse_by_director') }}">Directors</a>
+
+
+    <div id="nav-footer3">
+        CompSci 235 Assignment 2
+    </div>
+    <div id="nav-footer">
+         Jaydon Allen
+    </div>
+
+    <div id="nav-footer1">
+        jall383
+    </div>
+
+    <div id="nav-footer2">
+        245407775
+    </div>
+</nav>
