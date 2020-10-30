@@ -1,3 +1,7 @@
-go to "venv\Scripts" in command prompt
+To install requirements 
+CS235Assignment3\Movie App> py -3 -m venv venv
+CS235Assignment3\Movie App> venv\Scripts\activate
+CS235Assignment3\Movie App> pip install -r requirements.txt
 
-type "flask run"
+To run
+CS235Assignment3\Movie App>  flask run
